@@ -12,13 +12,23 @@ to generate this file without the comments in this block.
 -}
 { name = "my-project"
 , dependencies =
-  [ "console"
+  [ "aff"
+  , "console"
   , "effect"
+  , "either"
+  , "foldable-traversable"
+  , "foreign-object"
   , "halogen"
   , "halogen-hooks"
+  , "halogen-subscriptions"
+  , "maybe"
   , "payload"
   , "prelude"
   , "psci-support"
+  , "tailrec"
+  , "transformers"
+  , "tuples"
+  , "web-html"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "../back-end/src/Spec.purs", "test/**/*.purs" ]

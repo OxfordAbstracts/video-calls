@@ -9,7 +9,41 @@ import Payload.ResponseTypes (Response)
 import Spec (spec)
 
 client ::
-  { helloWorld ::
+  { dailyRoomCreate ::
+      { body ::
+          { enable_recording :: Boolean
+          , one_to_one :: Boolean
+          , owner_only_broadcast :: Boolean
+          , user_id :: Int
+          }
+      } ->
+      Aff
+        ( Either ClientError
+            ( Response
+                { id :: String
+                , name :: String
+                }
+            )
+        )
+  , dailyRoomCreate_ ::
+      { extraHeaders :: Headers
+      } ->
+      { body ::
+          { enable_recording :: Boolean
+          , one_to_one :: Boolean
+          , owner_only_broadcast :: Boolean
+          , user_id :: Int
+          }
+      } ->
+      Aff
+        ( Either ClientError
+            ( Response
+                { id :: String
+                , name :: String
+                }
+            )
+        )
+  , helloWorld ::
       { params ::
           { name :: String
           }
